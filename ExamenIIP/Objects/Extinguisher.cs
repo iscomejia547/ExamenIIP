@@ -17,7 +17,7 @@ namespace ExamenIIP.Objects
         public string place { get; set; }
         public DateTime date { get; set; }
         public Client owner { get; set; }
-        public enum TYPE{Agua,Químico,CO2}
+        public enum TYPE { Agua, Químico, CO2 }
         public Extinguisher(int id, char cat, string brand, int type, int cap, string und, string place, DateTime date, Client owner)
         {
             this.id = id;
@@ -29,6 +29,11 @@ namespace ExamenIIP.Objects
             this.place = place;
             this.date = date;
             this.owner = owner;
+        }
+        public String[] ToArray()
+        {
+            String[] arr = {this.id.ToString(), this.cat.ToString(), this.brand, this.type.ToString(), this.cap.ToString(),
+            this.und, this.place, this.date.ToShortDateString(), this.owner.id+": "+this.owner.name};
         }
     }
 }
