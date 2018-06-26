@@ -1,30 +1,30 @@
-﻿
+﻿using ExamenIIclient.Model;
+using ExamenIIP.Data;
+using ExamenIIP.Objects;
 using System;
-using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExamenIIP.Objects;
-using ExamenIIP.Data;
+using System.Windows.Forms;
 
-namespace ExamenIIclient.Model
+namespace ExamenIIP.Model
 {
-    public class ClientDB : DAODB<Client>
+    class ExtinguisherDB : DAODB<Extinguisher>
     {
-        private const int SIZE = 413;
-        private List<Client> clients;
-        private Client client;
+        private const int SIZE = 221;
+        private List<Extinguisher> extinguishers;
+        private Extinguisher extinguisher;
         private BinaryReader putin;
         private BinaryWriter putout;
 
-        public ClientDB()
+        public ExtinguisherDB()
         {
             streamGenerator();
         }
 
-        public bool create(Client t)
+        public bool create(Extinguisher t)
         {
             putin.BaseStream.Seek(0, SeekOrigin.Begin);
             int n = putin.ReadInt32();
@@ -37,44 +37,44 @@ namespace ExamenIIclient.Model
             long pos = 8 + (t.id - 1) * SIZE;
             putout.BaseStream.Seek(pos, SeekOrigin.Begin);
             putout.Write(t.id);
-            putout.Write(nVarChar(t.name, 45));
-            putout.Write(nVarChar(t.surname, 45));
-            putout.Write(nVarChar(t.cedula, 10));
-            putout.Write(nVarChar(t.cel, 8));
-            putout.Write(nVarChar(t.email, 20));
-            putout.Write(nVarChar(t.address, 45));
-            putout.Write(nVarChar(t.city, 15));
-            putout.Write(nVarChar(t.state, 15));
+            putout.Write(t.cat);
+            putout.Write(nVarChar(t.brand, 45));
+            putout.Write((int)t.type);
+            putout.Write(t.cap);
+            putout.Write(nVarChar(t.und, 6));
+            putout.Write(nVarChar(t.place, 45));
+            putout.Write(t.date.ToFileTimeUtc());
+            putout.Write(t.owner.id);
             putout.BaseStream.Seek(0, SeekOrigin.Begin);
             putout.Write(++n);
             putout.Write(++k);
             return true;
         }
 
-        public bool delete(Client t)
+        public bool delete(Extinguisher t)
         {
             throw new NotImplementedException();
         }
 
-        public List<Client> read()
+        public List<Extinguisher> read()
         {
-            clients = new List<Client>();
+            extinguishers = new List<Extinguisher>();
             putin.BaseStream.Seek(0, SeekOrigin.Begin);
             int n = putin.ReadInt32();
             for (int i = 1; i <= n; i++)
             {
-                client = QueryByID(i);
-                if (client != null)
+                extinguisher = QueryByID(i);
+                if (extinguisher != null)
                 {
-                    clients.Add(client);
+                    extinguishers.Add(extinguisher);
                 }
             }
-            return clients;
+            return extinguishers;
         }
 
-        public bool update(Client t)
+        public bool update(Extinguisher t)
         {
-            if(t == null)
+            if (t == null)
             {
                 return false;
             }
@@ -82,18 +82,18 @@ namespace ExamenIIclient.Model
             long pos = 8 + SIZE * (i - 1);
             putout.BaseStream.Seek(pos, SeekOrigin.Begin);
             putout.Write(t.id);
-            putout.Write(nVarChar(t.name, 45));
-            putout.Write(nVarChar(t.surname, 45));
-            putout.Write(nVarChar(t.cedula, 10));
-            putout.Write(nVarChar(t.cel, 8));
-            putout.Write(nVarChar(t.email, 20));
-            putout.Write(nVarChar(t.address, 45));
-            putout.Write(nVarChar(t.city, 15));
-            putout.Write(nVarChar(t.state, 15));
+            putout.Write(t.cat);
+            putout.Write(nVarChar(t.brand, 45));
+            putout.Write((int)t.type);
+            putout.Write(t.cap);
+            putout.Write(nVarChar(t.und, 6));
+            putout.Write(nVarChar(t.place, 45));
+            putout.Write(t.date.ToFileTimeUtc());
+            putout.Write(t.owner.id);
             putout.BaseStream.Seek(0, SeekOrigin.Begin);
             return true;
         }
-        public Client QueryByID(int ID)
+        public Extinguisher QueryByID(int ID)
         {
             putin.BaseStream.Seek(0, SeekOrigin.Begin);
             int n = putin.ReadInt32();
@@ -101,23 +101,24 @@ namespace ExamenIIclient.Model
             {
                 return null;
             }
+            ClientDB db = new ClientDB();
             long pos = 8 + SIZE * (ID - 1);
             putin.BaseStream.Seek(pos, SeekOrigin.Begin);
-            client = new Client();
-            client.id = putin.ReadInt32();
-            client.name = putin.ReadString().Trim();
-            client.surname = putin.ReadString().Trim();
-            client.cedula = putin.ReadString().Trim();
-            client.cel=putin.ReadString().Trim();
-            client.email = putin.ReadString().Trim();
-            client.address= putin.ReadString().Trim();
-            client.city= putin.ReadString().Trim();
-            client.state= putin.ReadString().Trim();
-            return client;
+            extinguisher = new Extinguisher();
+            extinguisher.id = putin.ReadInt32();
+            extinguisher.cat = putin.ReadChar();
+            extinguisher.brand = putin.ReadString().Trim();
+            extinguisher.type = (Extinguisher.TYPE)putin.ReadInt32();
+            extinguisher.cap = putin.ReadSingle();
+            extinguisher.und = putin.ReadString().Trim();
+            extinguisher.place = putin.ReadString().Trim();
+            extinguisher.date = DateTime.FromFileTimeUtc(putin.ReadInt64());
+            extinguisher.owner = db.QueryByID(putin.ReadInt32());
+            return extinguisher;
         }
         private void streamGenerator()
         {
-            FileStream fs = GeneralFiler.getFS(Application.StartupPath+@"\\clients.dat");
+            FileStream fs = GeneralFiler.getFS(Application.StartupPath + @"\\extinguishers.dat");
             putin = new BinaryReader(fs);
             putout = new BinaryWriter(fs);
         }
