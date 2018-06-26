@@ -8,16 +8,16 @@ namespace ExamenIIP.Objects
 {
     public class Client
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string cedula { get; set; }
-        public string cel { get; set; }
-        public string email { get; set; }
-        public string address { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-
+        public int id { get; set; }//4
+        public string name { get; set; }//45 char=90+3
+        public string surname { get; set; }//45 char=90
+        public string cedula { get; set; }//10char=20
+        public string cel { get; set; }//8char=16
+        public string email { get; set; }//20 char=40
+        public string address { get; set; }//45 char=90
+        public string city { get; set; }//15 char=30
+        public string state { get; set; }//15 char=30
+        //client SIZE= 413
         public Client(int id, string name, string surname, string cedula, string cel, string email, string address,string city, string state){
             this.id = id;
             this.cedula = cedula;
@@ -29,7 +29,7 @@ namespace ExamenIIP.Objects
             this.city = city;
             this.state = state;
         }
-
+        public Client() { }
         public string[] ToArray()
         {
             string[] arr = {this.id.ToString(),this.cedula, this.name, this.surname, this.cel, this.email, this.address,

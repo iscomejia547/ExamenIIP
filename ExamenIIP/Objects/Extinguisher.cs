@@ -30,6 +30,7 @@ namespace ExamenIIP.Objects
             this.date = date;
             this.owner = owner;
         }
+        public Extinguisher() { }
         public String[] ToArray()
         {
             String[] arr = {this.id.ToString(), this.cat.ToString(), this.brand, this.type.ToString(), this.cap.ToString(),

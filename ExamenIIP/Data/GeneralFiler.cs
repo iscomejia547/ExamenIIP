@@ -10,8 +10,7 @@ namespace ExamenIIP.Data
     class GeneralFiler
     {
         static FileStream fs;
-        static string PATH = null;
-        public static FileStream getFS()
+        public static FileStream getFS(string PATH)
         {
             if (PATH == null)
             {
@@ -30,7 +29,6 @@ namespace ExamenIIP.Data
                 fs = new FileStream(PATH, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 fs.Seek(0, SeekOrigin.Begin);
             }
-            PATH = null;
             return fs;
         }
     }
