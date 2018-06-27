@@ -36,9 +36,9 @@
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.extintorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.extintorCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.extintorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.extintorModify = new System.Windows.Forms.ToolStripMenuItem();
             this.ExtGrid = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -134,7 +134,7 @@
             // 
             this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem,
-            this.extintorToolStripMenuItem});
+            this.extintorCreate});
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarToolStripMenuItem.Text = "Agregar";
@@ -143,7 +143,7 @@
             // 
             this.modifiarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem1,
-            this.extintorToolStripMenuItem1});
+            this.extintorModify});
             this.modifiarToolStripMenuItem.Name = "modifiarToolStripMenuItem";
             this.modifiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifiarToolStripMenuItem.Text = "Modificar";
@@ -154,11 +154,12 @@
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
-            // extintorToolStripMenuItem
+            // extintorCreate
             // 
-            this.extintorToolStripMenuItem.Name = "extintorToolStripMenuItem";
-            this.extintorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.extintorToolStripMenuItem.Text = "Extintor";
+            this.extintorCreate.Name = "extintorCreate";
+            this.extintorCreate.Size = new System.Drawing.Size(180, 22);
+            this.extintorCreate.Text = "Extintor";
+            this.extintorCreate.Click += new System.EventHandler(this.extintorToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem1
             // 
@@ -166,11 +167,12 @@
             this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             // 
-            // extintorToolStripMenuItem1
+            // extintorModify
             // 
-            this.extintorToolStripMenuItem1.Name = "extintorToolStripMenuItem1";
-            this.extintorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.extintorToolStripMenuItem1.Text = "Extintor";
+            this.extintorModify.Name = "extintorModify";
+            this.extintorModify.Size = new System.Drawing.Size(180, 22);
+            this.extintorModify.Text = "Extintor";
+            this.extintorModify.Click += new System.EventHandler(this.extintorToolStripMenuItem1_Click);
             // 
             // ExtGrid
             // 
@@ -325,6 +327,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ID
             // 
@@ -370,7 +373,7 @@
             // 
             // Fecha_Compra
             // 
-            this.Fecha_Compra.HeaderText = "Fecha de Compra";
+            this.Fecha_Compra.HeaderText = "Fecha de Vencimiento";
             this.Fecha_Compra.Name = "Fecha_Compra";
             this.Fecha_Compra.ReadOnly = true;
             // 
@@ -415,10 +418,10 @@
         private System.Windows.Forms.ToolStripMenuItem FileMmItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem extintorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem extintorCreate;
         private System.Windows.Forms.ToolStripMenuItem modifiarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem extintorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem extintorModify;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView ExtGrid;
         private System.Windows.Forms.Button button1;

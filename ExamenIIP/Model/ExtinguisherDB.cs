@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ExamenIIP.Model
 {
-    class ExtinguisherDB : DAODB<Extinguisher>
+    public class ExtinguisherDB : DAODB<Extinguisher>
     {
         private const int SIZE = 221;
         private List<Extinguisher> extinguishers;
@@ -87,6 +87,7 @@ namespace ExamenIIP.Model
             putout.Write(t.id);
             putout.Write(t.cat);
             putout.Write(nVarChar(t.brand, 45));
+            //MessageBox.Show(t.cap.ToString());
             putout.Write((int)t.type);
             putout.Write(t.cap);
             putout.Write(nVarChar(t.und, 6));
@@ -117,6 +118,7 @@ namespace ExamenIIP.Model
             extinguisher.brand = putin.ReadString().Trim();
             extinguisher.type = (Extinguisher.TYPE)putin.ReadInt32();
             extinguisher.cap = putin.ReadSingle();
+            //MessageBox.Show(extinguisher.cap.ToString());
             extinguisher.und = putin.ReadString().Trim();
             extinguisher.place = putin.ReadString().Trim();
             extinguisher.date = DateTime.FromFileTimeUtc(putin.ReadInt64());

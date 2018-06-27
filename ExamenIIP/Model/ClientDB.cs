@@ -13,7 +13,7 @@ namespace ExamenIIP.Model
 {
     public class ClientDB : DAODB<Client>
     {
-        private const int SIZE = 413;
+        private const int SIZE = 425;
         private List<Client> clients;
         private Client client;
         private BinaryReader putin;
@@ -84,7 +84,7 @@ namespace ExamenIIP.Model
             putout.Write(t.id);
             putout.Write(nVarChar(t.name, 45));
             putout.Write(nVarChar(t.surname, 45));
-            putout.Write(nVarChar(t.cedula, 10));
+            putout.Write(nVarChar(t.cedula, 16));
             putout.Write(nVarChar(t.cel, 8));
             putout.Write(nVarChar(t.email, 20));
             putout.Write(nVarChar(t.address, 45));

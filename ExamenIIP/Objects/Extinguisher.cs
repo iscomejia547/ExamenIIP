@@ -26,7 +26,7 @@ namespace ExamenIIP.Objects
             this.cat = cat;
             this.brand = brand;
             this.type = (TYPE)type;
-            this.cat = cat;
+            this.cap = cap;
             this.und = und;
             this.place = place;
             this.date = date;

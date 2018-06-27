@@ -86,6 +86,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ExtDLG.resx">
+      <DependentUpon>ExtDLG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Helper.resx">
+      <DependentUpon>Helper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

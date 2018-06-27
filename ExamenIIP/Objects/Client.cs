@@ -11,7 +11,7 @@ namespace ExamenIIP.Objects
         public int id { get; set; }//4
         public string name { get; set; }//45 char=90+3
         public string surname { get; set; }//45 char=90
-        public string cedula { get; set; }//10char=20
+        public string cedula { get; set; }//16char=32
         public string cel { get; set; }//8char=16
         public string email { get; set; }//20 char=40
         public string address { get; set; }//45 char=90
