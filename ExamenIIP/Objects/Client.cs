@@ -17,7 +17,7 @@ namespace ExamenIIP.Objects
         public string address { get; set; }//45 char=90
         public string city { get; set; }//15 char=30
         public string state { get; set; }//15 char=30
-        //client SIZE= 413
+        //client SIZE= 425
         public Client(int id, string name, string surname, string cedula, string cel, string email, string address,string city, string state){
             this.id = id;
             this.cedula = cedula;

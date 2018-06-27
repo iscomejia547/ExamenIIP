@@ -35,9 +35,9 @@
             this.FileMmItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientecreate = new System.Windows.Forms.ToolStripMenuItem();
             this.extintorCreate = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteupdate = new System.Windows.Forms.ToolStripMenuItem();
             this.extintorModify = new System.Windows.Forms.ToolStripMenuItem();
             this.ExtGrid = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -133,7 +133,7 @@
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem,
+            this.clientecreate,
             this.extintorCreate});
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -142,17 +142,18 @@
             // modifiarToolStripMenuItem
             // 
             this.modifiarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem1,
+            this.clienteupdate,
             this.extintorModify});
             this.modifiarToolStripMenuItem.Name = "modifiarToolStripMenuItem";
             this.modifiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifiarToolStripMenuItem.Text = "Modificar";
             // 
-            // clienteToolStripMenuItem
+            // clientecreate
             // 
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clientecreate.Name = "clientecreate";
+            this.clientecreate.Size = new System.Drawing.Size(180, 22);
+            this.clientecreate.Text = "Cliente";
+            this.clientecreate.Click += new System.EventHandler(this.clientecreate_Click);
             // 
             // extintorCreate
             // 
@@ -161,11 +162,12 @@
             this.extintorCreate.Text = "Extintor";
             this.extintorCreate.Click += new System.EventHandler(this.extintorToolStripMenuItem_Click);
             // 
-            // clienteToolStripMenuItem1
+            // clienteupdate
             // 
-            this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.clienteToolStripMenuItem1.Text = "Cliente";
+            this.clienteupdate.Name = "clienteupdate";
+            this.clienteupdate.Size = new System.Drawing.Size(180, 22);
+            this.clienteupdate.Text = "Cliente";
+            this.clienteupdate.Click += new System.EventHandler(this.clienteupdate_Click);
             // 
             // extintorModify
             // 
@@ -417,10 +419,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FileMmItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientecreate;
         private System.Windows.Forms.ToolStripMenuItem extintorCreate;
         private System.Windows.Forms.ToolStripMenuItem modifiarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem clienteupdate;
         private System.Windows.Forms.ToolStripMenuItem extintorModify;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView ExtGrid;

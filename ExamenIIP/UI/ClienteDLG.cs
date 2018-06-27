@@ -16,7 +16,7 @@ namespace ExamenIIP.UI
     public partial class ClienteDLG : Form
     {
         private ClientDB cdb;
-        private Client cl;
+        public Client cl { get; set; }
         public bool isModify { get; set; }
         public ClienteDLG(ClientDB cdb)
         {
@@ -41,6 +41,39 @@ namespace ExamenIIP.UI
             {
                 cl = new Client(0, null, null, null, null, null, null, null, null);
             }
+        }
+
+        private void okbtn_Click(object sender, EventArgs e)
+        {
+            foreach (var comp in fieldpanel.Controls)
+            {
+                TextBox bx = comp as TextBox;
+                if (bx != null)
+                {
+                    if (bx.Text == "")
+                    {
+                        MessageBox.Show("No estan llenos todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+            Client nw = new Client(cl.id, namefield.Text, snamefield.Text, cedufield.Text, celnumfield.Text, emailfield.Text,
+                addressfield.Text, cityfield.Text, statefield.Text);
+            if (isModify)
+            {
+                if (cdb.update(nw))
+                {
+                    MessageBox.Show("Se ha actualizado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                if (cdb.create(nw))
+                {
+                    MessageBox.Show("Se ha creado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            this.Close();
         }
     }
 }

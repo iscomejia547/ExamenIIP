@@ -21,7 +21,7 @@ namespace ExamenIIP.UI
             cdb = new ClientDB();
             edb = new ExtinguisherDB();
             InitializeComponent();
-            /*Client def = new Client(0, "Jose Manuel", "Perez Soza", "001-010190", "12345678", "jose.perez@aol.com",
+            /*Client def = new Client(0, "Jose Manuel", "Perez Soza", "001-010190-0024G", "12345678", "jose.perez@aol.com",
                 "de donde no hay luz, dos cuadras al este", "Managua", "Managua");
             cdb.create(def);
             edb.create(new Extinguisher(0, 'A', "Amerex", 0, (float)12.5, "lt", "Sala de estar", DateTime.Now, def));*/
@@ -92,6 +92,27 @@ namespace ExamenIIP.UI
             dlg.isModify = true;
             dlg.ext = xd;
             dlg.ShowDialog();
+        }
+
+        private void clientecreate_Click(object sender, EventArgs e)
+        {
+            ClienteDLG dlg = new ClienteDLG(cdb);
+            dlg.isModify=false;
+            dlg.ShowDialog();
+            updateClients(cdb.read());
+        }
+
+        private void clienteupdate_Click(object sender, EventArgs e)
+        {
+            Helper help = new Helper(true);
+            help.ShowDialog();
+            int id = help.input();
+            Client cl = cdb.QueryByID(id);
+            ClienteDLG dlg = new ClienteDLG(cdb);
+            dlg.isModify = false;
+            dlg.cl = cl;
+            dlg.ShowDialog();
+            updateClients(cdb.read());
         }
     }
 }

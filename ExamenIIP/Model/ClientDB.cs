@@ -39,7 +39,7 @@ namespace ExamenIIP.Model
             putout.Write(t.id);
             putout.Write(nVarChar(t.name, 45));
             putout.Write(nVarChar(t.surname, 45));
-            putout.Write(nVarChar(t.cedula, 10));
+            putout.Write(nVarChar(t.cedula, 16));
             putout.Write(nVarChar(t.cel, 8));
             putout.Write(nVarChar(t.email, 20));
             putout.Write(nVarChar(t.address, 45));

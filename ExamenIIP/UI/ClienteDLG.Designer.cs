@@ -218,6 +218,7 @@
             this.okbtn.TabIndex = 9;
             this.okbtn.Text = "OK";
             this.okbtn.UseVisualStyleBackColor = true;
+            this.okbtn.Click += new System.EventHandler(this.okbtn_Click);
             // 
             // ClienteDLG
             // 
