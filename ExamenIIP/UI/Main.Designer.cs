@@ -41,7 +41,7 @@
             this.extintorModify = new System.Windows.Forms.ToolStripMenuItem();
             this.ExtGrid = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchextbtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.ClientGrid = new System.Windows.Forms.DataGridView();
             this.IDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +53,9 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.searchclientField = new System.Windows.Forms.TextBox();
+            this.searchclcmb = new System.Windows.Forms.ComboBox();
+            this.searchclientbtn = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoría = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +65,8 @@
             this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchextcmb = new System.Windows.Forms.ComboBox();
+            this.searchextfield = new System.Windows.Forms.TextBox();
             this.MainTab.SuspendLayout();
             this.ExtPage.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -202,27 +204,30 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.searchextfield);
+            this.flowLayoutPanel1.Controls.Add(this.searchextcmb);
+            this.flowLayoutPanel1.Controls.Add(this.searchextbtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 363);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(936, 34);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // button1
+            // searchextbtn
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Mostrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchextbtn.Location = new System.Drawing.Point(368, 3);
+            this.searchextbtn.Name = "searchextbtn";
+            this.searchextbtn.Size = new System.Drawing.Size(75, 23);
+            this.searchextbtn.TabIndex = 0;
+            this.searchextbtn.Text = "Buscar";
+            this.searchextbtn.UseVisualStyleBackColor = true;
+            this.searchextbtn.Click += new System.EventHandler(this.searchextbtn_Click);
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.textBox1);
-            this.flowLayoutPanel2.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.searchclientField);
+            this.flowLayoutPanel2.Controls.Add(this.searchclcmb);
+            this.flowLayoutPanel2.Controls.Add(this.searchclientbtn);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 368);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -306,30 +311,34 @@
             this.Departamento.Name = "Departamento";
             this.Departamento.ReadOnly = true;
             // 
-            // textBox1
+            // searchclientField
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 0;
+            this.searchclientField.Location = new System.Drawing.Point(3, 3);
+            this.searchclientField.Name = "searchclientField";
+            this.searchclientField.Size = new System.Drawing.Size(201, 20);
+            this.searchclientField.TabIndex = 0;
             // 
-            // comboBox1
+            // searchclcmb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(210, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.searchclcmb.FormattingEnabled = true;
+            this.searchclcmb.Items.AddRange(new object[] {
+            "ID",
+            "Cédula",
+            "Apellidos"});
+            this.searchclcmb.Location = new System.Drawing.Point(210, 3);
+            this.searchclcmb.Name = "searchclcmb";
+            this.searchclcmb.Size = new System.Drawing.Size(121, 21);
+            this.searchclcmb.TabIndex = 1;
             // 
-            // button2
+            // searchclientbtn
             // 
-            this.button2.Location = new System.Drawing.Point(337, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.searchclientbtn.Location = new System.Drawing.Point(337, 3);
+            this.searchclientbtn.Name = "searchclientbtn";
+            this.searchclientbtn.Size = new System.Drawing.Size(75, 23);
+            this.searchclientbtn.TabIndex = 2;
+            this.searchclientbtn.Text = "Buscar";
+            this.searchclientbtn.UseVisualStyleBackColor = true;
+            this.searchclientbtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // ID
             // 
@@ -385,6 +394,27 @@
             this.Cliente.Name = "Cliente";
             this.Cliente.ReadOnly = true;
             // 
+            // searchextcmb
+            // 
+            this.searchextcmb.FormattingEnabled = true;
+            this.searchextcmb.Items.AddRange(new object[] {
+            "Marca",
+            "Categoria",
+            "Unidad",
+            "Capacidad",
+            "Cliente"});
+            this.searchextcmb.Location = new System.Drawing.Point(241, 3);
+            this.searchextcmb.Name = "searchextcmb";
+            this.searchextcmb.Size = new System.Drawing.Size(121, 21);
+            this.searchextcmb.TabIndex = 1;
+            // 
+            // searchextfield
+            // 
+            this.searchextfield.Location = new System.Drawing.Point(3, 3);
+            this.searchextfield.Name = "searchextfield";
+            this.searchextfield.Size = new System.Drawing.Size(232, 20);
+            this.searchextfield.TabIndex = 2;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +433,7 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExtGrid)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientGrid)).EndInit();
@@ -426,7 +457,7 @@
         private System.Windows.Forms.ToolStripMenuItem extintorModify;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView ExtGrid;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button searchextbtn;
         private System.Windows.Forms.DataGridView ClientGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -438,9 +469,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox searchclientField;
+        private System.Windows.Forms.ComboBox searchclcmb;
+        private System.Windows.Forms.Button searchclientbtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoría;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
@@ -450,6 +481,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Lugar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
+        private System.Windows.Forms.TextBox searchextfield;
+        private System.Windows.Forms.ComboBox searchextcmb;
     }
 }
 

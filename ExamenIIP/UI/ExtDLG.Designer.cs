@@ -125,7 +125,7 @@
             this.brandfield.Location = new System.Drawing.Point(14, 68);
             this.brandfield.Name = "brandfield";
             this.brandfield.Size = new System.Drawing.Size(200, 23);
-            this.brandfield.TabIndex = 7;
+            this.brandfield.TabIndex = 1;
             this.brandfield.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // qtyfield
@@ -134,7 +134,7 @@
             this.qtyfield.Location = new System.Drawing.Point(14, 157);
             this.qtyfield.Name = "qtyfield";
             this.qtyfield.Size = new System.Drawing.Size(200, 23);
-            this.qtyfield.TabIndex = 8;
+            this.qtyfield.TabIndex = 3;
             // 
             // clfield
             // 
@@ -142,7 +142,7 @@
             this.clfield.Location = new System.Drawing.Point(14, 360);
             this.clfield.Name = "clfield";
             this.clfield.Size = new System.Drawing.Size(200, 23);
-            this.clfield.TabIndex = 10;
+            this.clfield.TabIndex = 7;
             // 
             // catcmb
             // 
@@ -155,7 +155,7 @@
             this.catcmb.Location = new System.Drawing.Point(14, 19);
             this.catcmb.Name = "catcmb";
             this.catcmb.Size = new System.Drawing.Size(200, 24);
-            this.catcmb.TabIndex = 11;
+            this.catcmb.TabIndex = 0;
             // 
             // typecmb
             // 
@@ -164,7 +164,7 @@
             this.typecmb.Location = new System.Drawing.Point(14, 113);
             this.typecmb.Name = "typecmb";
             this.typecmb.Size = new System.Drawing.Size(200, 24);
-            this.typecmb.TabIndex = 12;
+            this.typecmb.TabIndex = 2;
             // 
             // unitcmb
             // 
@@ -177,7 +177,7 @@
             this.unitcmb.Location = new System.Drawing.Point(14, 206);
             this.unitcmb.Name = "unitcmb";
             this.unitcmb.Size = new System.Drawing.Size(200, 24);
-            this.unitcmb.TabIndex = 13;
+            this.unitcmb.TabIndex = 4;
             // 
             // datefield
             // 
@@ -186,7 +186,7 @@
             this.datefield.Location = new System.Drawing.Point(14, 306);
             this.datefield.Name = "datefield";
             this.datefield.Size = new System.Drawing.Size(200, 23);
-            this.datefield.TabIndex = 14;
+            this.datefield.TabIndex = 6;
             // 
             // fieldpanel
             // 
@@ -208,7 +208,7 @@
             this.okbtn.Location = new System.Drawing.Point(193, 431);
             this.okbtn.Name = "okbtn";
             this.okbtn.Size = new System.Drawing.Size(75, 23);
-            this.okbtn.TabIndex = 16;
+            this.okbtn.TabIndex = 8;
             this.okbtn.Text = "OK";
             this.okbtn.UseVisualStyleBackColor = true;
             this.okbtn.Click += new System.EventHandler(this.okbtn_Click);
@@ -229,7 +229,7 @@
             this.placefield.Location = new System.Drawing.Point(14, 256);
             this.placefield.Name = "placefield";
             this.placefield.Size = new System.Drawing.Size(200, 23);
-            this.placefield.TabIndex = 15;
+            this.placefield.TabIndex = 5;
             // 
             // ExtDLG
             // 

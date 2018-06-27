@@ -37,14 +37,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.fieldpanel = new System.Windows.Forms.Panel();
-            this.cedufield = new System.Windows.Forms.MaskedTextBox();
-            this.celnumfield = new System.Windows.Forms.MaskedTextBox();
-            this.emailfield = new System.Windows.Forms.TextBox();
-            this.addressfield = new System.Windows.Forms.TextBox();
-            this.snamefield = new System.Windows.Forms.TextBox();
-            this.namefield = new System.Windows.Forms.TextBox();
-            this.statefield = new System.Windows.Forms.TextBox();
             this.cityfield = new System.Windows.Forms.TextBox();
+            this.statefield = new System.Windows.Forms.TextBox();
+            this.namefield = new System.Windows.Forms.TextBox();
+            this.snamefield = new System.Windows.Forms.TextBox();
+            this.addressfield = new System.Windows.Forms.TextBox();
+            this.emailfield = new System.Windows.Forms.TextBox();
+            this.celnumfield = new System.Windows.Forms.MaskedTextBox();
+            this.cedufield = new System.Windows.Forms.MaskedTextBox();
             this.okbtn = new System.Windows.Forms.Button();
             this.fieldpanel.SuspendLayout();
             this.SuspendLayout();
@@ -144,14 +144,53 @@
             this.fieldpanel.Size = new System.Drawing.Size(227, 448);
             this.fieldpanel.TabIndex = 8;
             // 
-            // cedufield
+            // cityfield
             // 
-            this.cedufield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cedufield.Location = new System.Drawing.Point(0, 137);
-            this.cedufield.Mask = "###-######-####L";
-            this.cedufield.Name = "cedufield";
-            this.cedufield.Size = new System.Drawing.Size(200, 23);
-            this.cedufield.TabIndex = 0;
+            this.cityfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cityfield.Location = new System.Drawing.Point(0, 365);
+            this.cityfield.Name = "cityfield";
+            this.cityfield.Size = new System.Drawing.Size(200, 23);
+            this.cityfield.TabIndex = 6;
+            // 
+            // statefield
+            // 
+            this.statefield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.statefield.Location = new System.Drawing.Point(0, 416);
+            this.statefield.Name = "statefield";
+            this.statefield.Size = new System.Drawing.Size(200, 23);
+            this.statefield.TabIndex = 7;
+            // 
+            // namefield
+            // 
+            this.namefield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.namefield.Location = new System.Drawing.Point(0, 17);
+            this.namefield.Name = "namefield";
+            this.namefield.Size = new System.Drawing.Size(200, 23);
+            this.namefield.TabIndex = 0;
+            // 
+            // snamefield
+            // 
+            this.snamefield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.snamefield.Location = new System.Drawing.Point(0, 77);
+            this.snamefield.Name = "snamefield";
+            this.snamefield.Size = new System.Drawing.Size(200, 23);
+            this.snamefield.TabIndex = 1;
+            // 
+            // addressfield
+            // 
+            this.addressfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.addressfield.Location = new System.Drawing.Point(0, 305);
+            this.addressfield.Name = "addressfield";
+            this.addressfield.Size = new System.Drawing.Size(200, 23);
+            this.addressfield.TabIndex = 5;
+            // 
+            // emailfield
+            // 
+            this.emailfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.emailfield.Location = new System.Drawing.Point(0, 252);
+            this.emailfield.Name = "emailfield";
+            this.emailfield.Size = new System.Drawing.Size(200, 23);
+            this.emailfield.TabIndex = 4;
             // 
             // celnumfield
             // 
@@ -160,62 +199,23 @@
             this.celnumfield.Mask = "########";
             this.celnumfield.Name = "celnumfield";
             this.celnumfield.Size = new System.Drawing.Size(200, 23);
-            this.celnumfield.TabIndex = 1;
+            this.celnumfield.TabIndex = 3;
             // 
-            // emailfield
+            // cedufield
             // 
-            this.emailfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.emailfield.Location = new System.Drawing.Point(0, 252);
-            this.emailfield.Name = "emailfield";
-            this.emailfield.Size = new System.Drawing.Size(200, 23);
-            this.emailfield.TabIndex = 2;
-            // 
-            // addressfield
-            // 
-            this.addressfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.addressfield.Location = new System.Drawing.Point(0, 305);
-            this.addressfield.Name = "addressfield";
-            this.addressfield.Size = new System.Drawing.Size(200, 23);
-            this.addressfield.TabIndex = 3;
-            // 
-            // snamefield
-            // 
-            this.snamefield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.snamefield.Location = new System.Drawing.Point(0, 77);
-            this.snamefield.Name = "snamefield";
-            this.snamefield.Size = new System.Drawing.Size(200, 23);
-            this.snamefield.TabIndex = 4;
-            // 
-            // namefield
-            // 
-            this.namefield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.namefield.Location = new System.Drawing.Point(0, 17);
-            this.namefield.Name = "namefield";
-            this.namefield.Size = new System.Drawing.Size(200, 23);
-            this.namefield.TabIndex = 5;
-            // 
-            // statefield
-            // 
-            this.statefield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.statefield.Location = new System.Drawing.Point(0, 416);
-            this.statefield.Name = "statefield";
-            this.statefield.Size = new System.Drawing.Size(200, 23);
-            this.statefield.TabIndex = 6;
-            // 
-            // cityfield
-            // 
-            this.cityfield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cityfield.Location = new System.Drawing.Point(0, 365);
-            this.cityfield.Name = "cityfield";
-            this.cityfield.Size = new System.Drawing.Size(200, 23);
-            this.cityfield.TabIndex = 7;
+            this.cedufield.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cedufield.Location = new System.Drawing.Point(0, 137);
+            this.cedufield.Mask = "###-######-####L";
+            this.cedufield.Name = "cedufield";
+            this.cedufield.Size = new System.Drawing.Size(200, 23);
+            this.cedufield.TabIndex = 2;
             // 
             // okbtn
             // 
             this.okbtn.Location = new System.Drawing.Point(137, 466);
             this.okbtn.Name = "okbtn";
             this.okbtn.Size = new System.Drawing.Size(75, 23);
-            this.okbtn.TabIndex = 9;
+            this.okbtn.TabIndex = 8;
             this.okbtn.Text = "OK";
             this.okbtn.UseVisualStyleBackColor = true;
             this.okbtn.Click += new System.EventHandler(this.okbtn_Click);

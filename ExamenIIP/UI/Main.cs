@@ -61,13 +61,34 @@ namespace ExamenIIP.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Helper help = new Helper(false);
-            Int32 id = 0;
-            MessageBox.Show(id.ToString());
-            help.setID(id);
-            help.ShowDialog(this);
-            id = help.input();
-            MessageBox.Show(id.ToString());
+            int opt = searchclcmb.SelectedIndex;
+            List<Client> all = cdb.read();
+            switch (opt)
+            {
+                default:
+                    {
+                        updateClients(all);
+                        return;
+                    }
+                case 0:
+                    {
+                        List<Client> list= new List<Client>{cdb.QueryByID(Int32.Parse(searchclientField.Text))};
+                        updateClients(list);
+                        break;
+                    }
+                case 1:
+                    {
+                        var list = (from Client x in all where x.cedula.Equals(searchclcmb.Text) select x).ToList();
+                        updateClients(list);
+                        break;
+                    }
+                case 2:
+                    {
+                        var list = (from Client x in all where x.surname.Equals(searchclcmb.Text) select x).ToList();
+                        updateClients(list);
+                        break;
+                    }
+            }
         }
 
         private void extintorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +134,47 @@ namespace ExamenIIP.UI
             dlg.cl = cl;
             dlg.ShowDialog();
             updateClients(cdb.read());
+        }
+
+        private void searchextbtn_Click(object sender, EventArgs e)
+        {
+            int opt = searchextcmb.SelectedIndex;
+            List<Extinguisher> all = edb.read();
+            List<Extinguisher> list=null;
+            switch (opt)
+            {
+                default:
+                    {
+                        updateExt(all);
+                        return;
+                    }
+                case 0:
+                    {
+                        list = (from Extinguisher x in all where x.brand.Equals(searchextfield.Text) select x).ToList();
+                        break;
+                    }
+                case 1:
+                    {
+                        list = (from Extinguisher x in all where x.cat == searchextfield.Text[0] select x).ToList();
+                        break;
+                    }
+                case 2:
+                    {
+                        list = (from Extinguisher x in all where x.und.Equals(searchextfield.Text) select x).ToList();
+                        break;
+                    }
+                case 3:
+                    {
+                        list = (from Extinguisher x in all where x.cap == Single.Parse(searchextfield.Text) select x).ToList();
+                        break;
+                    }
+                case 4:
+                    {
+                        list = (from Extinguisher x in all where x.owner.id == Int32.Parse(searchextfield.Text) select x).ToList();
+                        break;
+                    }
+            }
+            updateExt(list);
         }
     }
 }
