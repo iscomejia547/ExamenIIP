@@ -20,7 +20,7 @@ namespace ExamenIIP.Objects
         //Extinguisher size=221
 
         public enum TYPE { Agua, Químico, CO2 }
-        public Extinguisher(int id, char cat, string brand, int type, int cap, string und, string place, DateTime date, Client owner)
+        public Extinguisher(int id, char cat, string brand, int type, float cap, string und, string place, DateTime date, Client owner)
         {
             this.id = id;
             this.cat = cat;
@@ -37,6 +37,11 @@ namespace ExamenIIP.Objects
         {
             String[] arr = {this.id.ToString(), this.cat.ToString(), this.brand, this.type.ToString(), this.cap.ToString(),
             this.und, this.place, this.date.ToShortDateString(), this.owner.id+": "+this.owner.name};
+            return arr;
+        }
+        public String VoidAdvice()
+        {
+            return "El extintor de ID: " + this.id + ", marca: " + this.brand;
         }
     }
 }

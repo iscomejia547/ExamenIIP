@@ -1,5 +1,4 @@
-﻿using ExamenIIclient.Model;
-using ExamenIIP.Data;
+﻿using ExamenIIP.Data;
 using ExamenIIP.Objects;
 using System;
 using System.Collections.Generic;
@@ -18,12 +17,16 @@ namespace ExamenIIP.Model
         private Extinguisher extinguisher;
         private BinaryReader putin;
         private BinaryWriter putout;
+        private List<Client> clients=null;
 
         public ExtinguisherDB()
         {
             streamGenerator();
         }
-
+        public void setClients(List<Client> clients)
+        {
+            this.clients = clients;
+        }
         public bool create(Extinguisher t)
         {
             putin.BaseStream.Seek(0, SeekOrigin.Begin);
@@ -95,13 +98,17 @@ namespace ExamenIIP.Model
         }
         public Extinguisher QueryByID(int ID)
         {
+            if (clients == null)
+            {
+                throw new ArgumentException("NON VALID");
+            }
             putin.BaseStream.Seek(0, SeekOrigin.Begin);
             int n = putin.ReadInt32();
             if (ID > n || ID <= 0)
             {
                 return null;
             }
-            ClientDB db = new ClientDB();
+            //ClientDB db = new ClientDB();
             long pos = 8 + SIZE * (ID - 1);
             putin.BaseStream.Seek(pos, SeekOrigin.Begin);
             extinguisher = new Extinguisher();
@@ -113,7 +120,9 @@ namespace ExamenIIP.Model
             extinguisher.und = putin.ReadString().Trim();
             extinguisher.place = putin.ReadString().Trim();
             extinguisher.date = DateTime.FromFileTimeUtc(putin.ReadInt64());
-            extinguisher.owner = db.QueryByID(putin.ReadInt32());
+            int y = putin.ReadInt32();
+            var client = (from Client x in clients where x.id == y  select x).ToArray()[0];
+            extinguisher.owner = client;
             return extinguisher;
         }
         private void streamGenerator()

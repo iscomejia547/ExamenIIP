@@ -45,11 +45,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Data\GeneralFiler.cs" />
+    <Compile Include="Data\DAODB.cs" />
+    <Compile Include="Model\ClientDB.cs" />
+    <Compile Include="Model\ExtinguisherDB.cs" />
+    <Compile Include="Objects\Client.cs" />
+    <Compile Include="Objects\Extinguisher.cs" />
+    <Compile Include="UI\ClienteDLG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UI\ClienteDLG.Designer.cs">
+      <DependentUpon>ClienteDLG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExtDLG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ExtDLG.Designer.cs">
+      <DependentUpon>ExtDLG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Helper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Helper.Designer.cs">
+      <DependentUpon>Helper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +86,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,5 +102,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

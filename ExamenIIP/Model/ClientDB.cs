@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using ExamenIIP.Objects;
 using ExamenIIP.Data;
 
-namespace ExamenIIclient.Model
+namespace ExamenIIP.Model
 {
     public class ClientDB : DAODB<Client>
     {

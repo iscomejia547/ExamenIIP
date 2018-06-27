@@ -36,5 +36,9 @@ namespace ExamenIIP.Objects
             this.city, this.state};
             return arr;
         }
+        public string pair()
+        {
+            return "|" + this.id + ": " + this.name + " " + this.surname+"|";
+        }
     }
 }
